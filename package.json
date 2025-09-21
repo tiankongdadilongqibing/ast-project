@@ -1,0 +1,37 @@
+{
+  "name": "directory-string-replacer",
+  "version": "1.0.0",
+  "description": "一个强大的JavaScript工具，用于在指定目录下查找符合条件的子目录，并递归替换其中的特定字符串",
+  "main": "directory-string-replacer.js",
+  "bin": {
+    "directory-string-replacer": "./directory-string-replacer.js"
+  },
+  "scripts": {
+    "start": "node directory-string-replacer.js",
+    "example": "node example.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "directory",
+    "string",
+    "replace",
+    "search",
+    "recursive",
+    "file",
+    "tool",
+    "utility"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/directory-string-replacer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/directory-string-replacer/issues"
+  },
+  "homepage": "https://github.com/yourusername/directory-string-replacer#readme"
+}
