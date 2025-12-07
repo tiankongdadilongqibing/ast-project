@@ -1,37 +1,40 @@
 {
-  "name": "directory-string-replacer",
+  "name": "code-compliance-checker",
   "version": "1.0.0",
-  "description": "一个强大的JavaScript工具，用于在指定目录下查找符合条件的子目录，并递归替换其中的特定字符串",
-  "main": "directory-string-replacer.js",
-  "bin": {
-    "directory-string-replacer": "./directory-string-replacer.js"
-  },
+  "description": "AST-based code compliance checker with customizable rules",
+  "main": "dist/server/index.js",
   "scripts": {
-    "start": "node directory-string-replacer.js",
-    "example": "node example.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "concurrently \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "nodemon --watch server --exec ts-node server/index.ts",
+    "dev:client": "cd client && npm run dev",
+    "build": "npm run build:server && npm run build:client",
+    "build:server": "tsc -p tsconfig.server.json",
+    "build:client": "cd client && npm run build",
+    "start": "node dist/server/index.js"
   },
-  "keywords": [
-    "directory",
-    "string",
-    "replace",
-    "search",
-    "recursive",
-    "file",
-    "tool",
-    "utility"
-  ],
-  "author": "Your Name",
+  "keywords": ["ast", "code-analysis", "compliance", "linter"],
+  "author": "",
   "license": "MIT",
-  "engines": {
-    "node": ">=8.0.0"
+  "dependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/parser": "^7.23.0",
+    "@babel/traverse": "^7.23.0",
+    "@babel/types": "^7.23.0",
+    "express": "^4.18.2",
+    "cors": "^2.8.5",
+    "glob": "^10.3.10",
+    "chalk": "^4.1.2"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/yourusername/directory-string-replacer.git"
-  },
-  "bugs": {
-    "url": "https://github.com/yourusername/directory-string-replacer/issues"
-  },
-  "homepage": "https://github.com/yourusername/directory-string-replacer#readme"
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.0",
+    "@types/cors": "^2.8.17",
+    "@types/glob": "^8.1.0",
+    "typescript": "^5.3.2",
+    "ts-node": "^10.9.2",
+    "nodemon": "^3.0.2",
+    "concurrently": "^8.2.2"
+  }
 }
+
+
